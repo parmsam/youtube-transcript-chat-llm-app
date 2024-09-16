@@ -1,6 +1,6 @@
 # youtube-video-chat-llm-app
 
-This is a Shiny for Python app that fetches a Youtube video transcript and provides a LLM chat interface around it. It uses the OpenAI API for the LLM and youtube_transcript_api package to get the Youtube video transcripts.
+This is a Shiny for Python app that fetches a Youtube video transcript and provides a LLM chat interface around it. It uses the [OpenAI API](https://github.com/openai/openai-python) for the LLM and [youtube-transcript-api](https://pypi.org/project/youtube-transcript-api/) package to get the Youtube video transcripts.
 
 ## Setup
 
