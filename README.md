@@ -8,6 +8,6 @@ The app expects that you have an OpenAI API key that you can paste into the inpu
 
 ## Accessing the app
 
-You can clone this repo and run the app locally or publish the app onto [Connect Cloud](https://connect.posit.cloud/). You may need to create a Connect Cloud account to access the app.
+You can clone this repo and run the app locally or publish the app onto [Connect Cloud](https://connect.posit.cloud/). You will need to create a Connect Cloud account to create an app.
 
 The app should work locally after you provide it your OpenAI API key. Note that publishing on a server like Connect Cloud will require you to [specify a https proxy for youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) to be used during the requests to YouTube.
