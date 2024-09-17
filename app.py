@@ -32,8 +32,14 @@ app_ui = ui.page_fillable(
             "Enter YouTube URL:",
             placeholder="https://www.youtube.com/watch?v=...",
             value=test_url2,
-            width="75%",
-        )
+            width="50%",
+        ),
+        ui.input_checkbox(
+            "include_timestamps", 
+            "Include Timestamps", 
+            value=False,
+            width="20%",
+        ),
         ]),
     ui.input_action_button("fetch_transcript", "Fetch Transcript"),
     ui.card(    
@@ -69,7 +75,10 @@ def server(input, output, session):
                 else:
                     video_id = re.search(r"v=([^&]+)", url).group(1)
                 transcript_data = YouTubeTranscriptApi.get_transcript(video_id)
-                full_transcript = " ".join([entry['text'] for entry in transcript_data])
+                if input.include_timestamps():
+                    full_transcript = "\n".join([f"{entry['start']} - {entry['text']}" for entry in transcript_data])
+                else:
+                    full_transcript = " ".join([entry['text'] for entry in transcript_data])
                 transcript.set(full_transcript)
                 await chat.append_message(
                     f"""Grabbing video transcript. 
